@@ -20,7 +20,8 @@
 		direction: "rtl",
 		utf8: "לֹא תִשָּׂא",
 		image: "hebrew2.png",
-		font: "Ezra SIL"
+		font: "Ezra SIL",
+		note: "Pango gets this wrong"
 	},
 	{
 		description: "Hebrew with pointings and cantillation",
@@ -28,13 +29,15 @@
 		direction: "rtl",
 		utf8: "לֹ֥א תִשָּׂ֛א",
 		image: "hebrew3.png",
-		font: "Ezra SIL"
+		font: "Ezra SIL",
+		note: "Pango gets this wrong"
 	},
 	{ 
 		description: "Burmese",
 		language: "he",
 		direction: "ltr",
 		utf8: "အစည်းအဝေးကြီးက",
-		image: "burmese1.png"
+		image: "burmese1.png",
+		note: "Pango gets this wrong"
 	},	
 ])
