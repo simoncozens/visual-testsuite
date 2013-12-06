@@ -1,0 +1,40 @@
+(tests=[
+	{ 
+		description: "Basic Arabic",
+		language: "ar",
+		direction: "rtl",
+		utf8: "العربية",
+		image: "arabic1.png"
+	},
+	{ 
+		description: "Mixed Hebrew/LTR",
+		language: "he",
+		direction: "ltr",
+		utf8: "Hebrew אדםה (adamah)",
+		image: "hebrew1.png",
+		font: "Ezra SIL"
+	},
+	{ 
+		description: "Hebrew with pointings",
+		language: "he",
+		direction: "rtl",
+		utf8: "לֹא תִשָּׂא",
+		image: "hebrew2.png",
+		font: "Ezra SIL"
+	},
+	{
+		description: "Hebrew with pointings and cantillation",
+		language: "he",
+		direction: "rtl",
+		utf8: "לֹ֥א תִשָּׂ֛א",
+		image: "hebrew3.png",
+		font: "Ezra SIL"
+	},
+	{ 
+		description: "Burmese",
+		language: "he",
+		direction: "ltr",
+		utf8: "အစည်းအဝေးကြီးက",
+		image: "burmese1.png"
+	},	
+])

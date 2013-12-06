@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Visual Test Suite for Layout Implementors</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="renderings.jsonp"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <style>
+    .example { font-size: 20pt}
+    .table td { vertical-align: middle; }
+    </style>
+  </head>
+  <body>
+
+    <div class="navbar navbar-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">Visual Test Suite</a>
+          <div class="container nav-collapse">
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+    <h1>A Visual Test Suite for Layout Implementors</h1>
+
+    <table id="tests" class="table">
+      <tr><th>ID</th><th>Description</th><th>Language</th><th>Unicode</th><th>Expected</th></tr>
+    </table>
+  </div>
+
+<script>
+$( function () {
+  console.log("Hello world");
+
+  tests.forEach(function (t,i){
+    var row = $("<tr>").append(
+      $("<td>").append(i+1)
+    ).append(
+    $("<td>").append(t.description)
+    ).append(
+    $("<td>").append(t.language)
+    ).append(
+    $("<td>").append(t.utf8).addClass("example")
+    ).append(
+    $("<td>").append($("<img>").attr("src", "images/"+t.image))
+    );
+    $("#tests").append(row);
+  });
+
+});
+</script>
+  </body>
+</html>
