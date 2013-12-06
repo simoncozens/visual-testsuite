@@ -10,6 +10,7 @@
     <style>
     .example { font-size: 20pt}
     .table td { vertical-align: middle; }
+    .note { color: #aaa; font-size: 12px;}
     </style>
   </head>
   <body>
@@ -28,6 +29,13 @@
 
     <h1>A Visual Test Suite for Layout Implementors</h1>
 
+    <p>This page collects some examples of non-Roman scripts with unusual rendering properties,
+      with some visual evidence of how the script ought to canonically be laid out in a given font.
+      The idea is that those who are writing rendering, shaping, layout or typesetting applications
+      can check how the Unicode text below gets rendered with their library, to see if the library
+      is behaving properly for that script. (The test suite is available as a
+      <a href="renderings.jsonp">JSON file</a>, to help automate the generation of test output.)
+    </p>
     <table id="tests" class="table">
       <tr><th>ID</th><th>Description</th><th>Language</th><th>Unicode</th><th>Expected</th></tr>
     </table>
@@ -38,14 +46,16 @@ $( function () {
   console.log("Hello world");
 
   tests.forEach(function (t,i){
+    var example = $("<td>").append(t.utf8).addClass("example");
+    if (t.font) example.css("font-family", t.font)
     var row = $("<tr>").append(
       $("<td>").append(i+1)
     ).append(
-    $("<td>").append(t.description)
+    $("<td>").append(t.description).append(t.note ? '<div class="note">Note: '+t.note+"</div>" : "")
     ).append(
     $("<td>").append(t.language)
     ).append(
-    $("<td>").append(t.utf8).addClass("example")
+      example
     ).append(
     $("<td>").append($("<img>").attr("src", "images/"+t.image))
     );
